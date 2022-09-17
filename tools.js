@@ -13,12 +13,12 @@ if(typeof hasRunSetup === 'undefined') {
     controlChange[index]=val
     //cc(index)
   }
-	/*
+	
   cc = (val) => {
     console.log(val + " : " + controlChange[val])
-    return controlChange[val]
+    return () => controlChange[val]
   }
-  */
+  
   
   function onMIDISuccess(midiAccess) {
     console.log("Success");
