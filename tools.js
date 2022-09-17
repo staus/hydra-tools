@@ -1,23 +1,14 @@
 // register WebMIDI
-console.log("access")
-console.log(access)
-if (!access) {
-  console.log("No Access)
-	navigator.requestMIDIAccess()
-    .then(onMIDISuccess, onMIDIFailure);
-}
-else {
-  console.log("Already Access)
-}
+
+navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure)
 
 function onMIDISuccess(midiAccess) {
-  console.log(midiAccess);
+  console.log("Success");
   var inputs = midiAccess.inputs;
   var outputs = midiAccess.outputs;
   for (var input of midiAccess.inputs.values()){
     input.onmidimessage = getMIDIMessage;
   }
-	access = true
 }
 
 function onMIDIFailure() {
@@ -36,9 +27,7 @@ getMIDIMessage = function(midiMessage) {
 }
 
 function cc(val) {
-  console.log("Set CC")
-  console.log(val)
-	return () => controlChange[val]
+  return () => controlChange[val]
 }
 
 /*
