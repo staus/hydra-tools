@@ -3,14 +3,17 @@ console.log("Run many times")
 if(typeof hasRunSetup === 'undefined') {
   console.log("Run Once")
   //create an array to hold our cc values and init to a normalized value
-  cc=Array(128).fill(0.5)
+  controlChange=Array(128).fill(0.5)
   
   getMIDIMessage = function(midiMessage) {
     var arr = midiMessage.data    
     var index = arr[1]
     console.log('Midi received on cc#' + index + ' value:' + arr[2])    // uncomment to monitor incoming Midi
     var val = (arr[2]+1)/128.0  // normalize CC values to 0.0 - 1.0
-    cc[index]=val
+    controlChange[index]=val
+  }
+  cc = (val) => {
+    controlChange[val]
   }
   
   function onMIDISuccess(midiAccess) {
