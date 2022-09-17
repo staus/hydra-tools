@@ -16,7 +16,7 @@ function onMIDIFailure() {
 }
 
 //create an array to hold our cc values and init to a normalized value
-var controlChange=Array(128).fill(0.5)
+controlChange=Array(128).fill(0.5)
 
 getMIDIMessage = function(midiMessage) {
   var arr = midiMessage.data    
