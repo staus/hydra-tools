@@ -30,6 +30,7 @@ getMIDIMessage = function(midiMessage) {
 function cc(val) {
   return () => controlChange[val]
 }
+test = 50
 
 /*
 if (typeof _ === 'undefined') {
