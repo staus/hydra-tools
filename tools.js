@@ -30,4 +30,6 @@ function cc(val) {
 	return () => controlChange[val]
 }
 
-_ = new P5({mode: 'WEBGL'})
+if (typeof _ === 'undefined') {
+	_ = new P5({mode: 'WEBGL'})
+}
