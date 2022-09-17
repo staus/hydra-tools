@@ -1,5 +1,4 @@
-console.log("Run many times")
-//const hasRunSetup = localStorage.getItem("hasRunSetup")
+
 if(typeof hasRunSetup === 'undefined') {
   console.log("Run Once")
   //create an array to hold our cc values and init to a normalized value
@@ -11,16 +10,15 @@ if(typeof hasRunSetup === 'undefined') {
     console.log('Midi received on cc#' + index + ' value:' + arr[2])    // uncomment to monitor incoming Midi
     var val = (arr[2]+1)/128.0  // normalize CC values to 0.0 - 1.0
     cc[index]=val
-    //cc(index)
   }
-	/*
-  cc = (val) => {
-    console.log(val + " : " + controlChange[val])
-    return () => return controlChange[val]
-  }
-  */
+	
+  // To be used in Hydra
   function c(id, from = 0, to = 1) {
     return () => { return cc[id] * (to - from) + from} 
+  }
+  // To be used inside p5 draw function:
+  function _c(id, from = 0, to = 1) {
+    return cc[id] * (to - from) + from
   }
   
   function onMIDISuccess(midiAccess) {
