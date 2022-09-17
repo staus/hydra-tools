@@ -24,6 +24,7 @@ getMIDIMessage = function(midiMessage) {
   console.log('Midi received on cc#' + index + ' value:' + arr[2])    // uncomment to monitor incoming Midi
   var val = (arr[2]+1)/128.0  // normalize CC values to 0.0 - 1.0
   controlChange[index]=val
+  console.log('Midi: ' + controlChange[index])    // uncomment to monitor incoming Midi
 }
 
 function cc(val) {
