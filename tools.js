@@ -1,6 +1,27 @@
-// register WebMIDI
-
-navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure)
+console.log("Run many times")
+//const hasRunSetup = localStorage.getItem("hasRunSetup")
+if(hasRunSetup != true) {
+  console.log("Run Once")
+  //create an array to hold our cc values and init to a normalized value
+  controlChange=Array(128).fill(0.5)
+  navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure)
+  
+  m = []
+  let knobId = 0
+  for(i = 0; i < 4; i++) {
+    const page = []
+    for(o = 0; o < 4; o++) {
+      const row = []
+      for(u = 0; u < 4; u++) {
+        row.push(knobID) // cc(i*16+u+4*o, 0)
+        knobID++
+      }
+      page.push(row)
+    }
+    m.push(page)
+  }
+  hasRunSetup = true
+}
 
 function onMIDISuccess(midiAccess) {
   console.log("Success");
@@ -15,9 +36,6 @@ function onMIDIFailure() {
   console.log('Could not access your MIDI devices.');
 }
 
-//create an array to hold our cc values and init to a normalized value
-controlChange=Array(128).fill(0.5)
-
 getMIDIMessage = function(midiMessage) {
   var arr = midiMessage.data    
   var index = arr[1]
@@ -27,24 +45,9 @@ getMIDIMessage = function(midiMessage) {
   console.log('Midi: ' + controlChange[index])    // uncomment to monitor incoming Midi
 }
 
-function cc(val) {
-  console.log(val)
+cc(val) {
+  console.log("CC: " + val)
   return () => controlChange[val]
-}
-
-let knobId = 0
-const m = []
-for(i = 0; i < 4; i++) {
-  const page = []
-  for(o = 0; o < 4; o++) {
-    const row = []
-    for(u = 0; u < 4; u++) {
-      row.push(knobID) // cc(i*16+u+4*o, 0)
-      knobID++
-    }
-    page.push(row)
-  }
-  m.push(page)
 }
 
 /*
