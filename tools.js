@@ -1,6 +1,6 @@
 console.log("Run many times")
 //const hasRunSetup = localStorage.getItem("hasRunSetup")
-if(hasRunSetup === undefined) {
+if(typeof hasRunSetup === 'undefined') {
   console.log("Run Once")
   //create an array to hold our cc values and init to a normalized value
   controlChange=Array(128).fill(0.5)
