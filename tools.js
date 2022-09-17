@@ -16,7 +16,7 @@ if(typeof hasRunSetup === 'undefined') {
 	
   cc = (val) => {
     console.log(val + " : " + controlChange[val])
-    return () => controlChange[val]
+    return () => return controlChange[val]
   }
   
   
