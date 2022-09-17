@@ -32,6 +32,7 @@ function cc(val) {
   return () => controlChange[val]
 }
 
+let knobId = 0
 const m = []
 for(i = 0; i < 4; i++) {
   const page = []
