@@ -19,6 +19,9 @@ if(typeof hasRunSetup === 'undefined') {
     return () => return controlChange[val]
   }
   */
+  function c(id, from = 0, to = 1) {
+    return () => { return cc[id] * (to - from) + from} 
+  }
   
   function onMIDISuccess(midiAccess) {
     console.log("Success");
