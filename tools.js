@@ -29,3 +29,5 @@ getMIDIMessage = function(midiMessage) {
 function cc(val) {
 	return () => controlChange[val]
 }
+
+_ = new P5({mode: 'WEBGL'})
