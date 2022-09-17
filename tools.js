@@ -1,4 +1,5 @@
 console.log("Run many times")
+console.log(hasRunSetup)
 //const hasRunSetup = localStorage.getItem("hasRunSetup")
 if(hasRunSetup != true) {
   console.log("Run Once")
@@ -44,12 +45,12 @@ getMIDIMessage = function(midiMessage) {
   controlChange[index]=val
   console.log('Midi: ' + controlChange[index])    // uncomment to monitor incoming Midi
 }
-
+/*
 cc(val) {
   console.log("CC: " + val)
   return () => controlChange[val]
 }
-
+*/
 /*
 if (typeof _ === 'undefined') {
 	_ = new P5({mode: 'WEBGL'})
