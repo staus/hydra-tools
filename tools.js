@@ -28,6 +28,7 @@ getMIDIMessage = function(midiMessage) {
 }
 
 function cc(val) {
+  console.log(val)
   return () => controlChange[val]
 }
 test = 50
