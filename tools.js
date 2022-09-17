@@ -31,7 +31,20 @@ function cc(val) {
   console.log(val)
   return () => controlChange[val]
 }
-test = 50
+
+const m = []
+for(i = 0; i < 4; i++) {
+  const page = []
+  for(o = 0; o < 4; o++) {
+    const row = []
+    for(u = 0; u < 4; u++) {
+      row.push(knobID) // cc(i*16+u+4*o, 0)
+      knobID++
+    }
+    page.push(row)
+  }
+  m.push(page)
+}
 
 /*
 if (typeof _ === 'undefined') {
