@@ -44,11 +44,11 @@ if(typeof hasRunSetup === 'undefined') {
   navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure)
   hasRunSetup = true
 }
-
+/*
 cc(val) {
   return () => controlChange[val]
 }
-
+*/
 /*
 if (typeof _ === 'undefined') {
 	_ = new P5({mode: 'WEBGL'})
