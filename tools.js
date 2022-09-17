@@ -34,3 +34,4 @@ console.log(_)
 if (typeof _ === 'undefined') {
 	_ = new P5({mode: 'WEBGL'})
 }
+console.log(_)
