@@ -49,11 +49,8 @@ if(typeof hasRunSetup === 'undefined') {
   }
 	
   navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure)
+
+  _ = new P5({mode: 'WEBGL'})
+
   hasRunSetup = true
 }
-
-/*
-if (typeof _ === 'undefined') {
-	_ = new P5({mode: 'WEBGL'})
-}
-*/
