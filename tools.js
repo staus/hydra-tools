@@ -13,7 +13,7 @@ if(typeof hasRunSetup === 'undefined') {
     controlChange[index]=val
   }
   cc = (val) => {
-    console.log(val + " : " controlChange[val])
+    console.log(val + " : " + controlChange[val])
     return controlChange[val]
   }
   
