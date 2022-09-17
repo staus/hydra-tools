@@ -12,7 +12,7 @@ if(typeof hasRunSetup === 'undefined') {
     var val = (arr[2]+1)/128.0  // normalize CC values to 0.0 - 1.0
     controlChange[index]=val
   }
-  cc = (val) => {
+  cc = function(val) {
     controlChange[val]
   }
   
