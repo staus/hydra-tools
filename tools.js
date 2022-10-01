@@ -7,7 +7,7 @@ if(typeof hasRunSetup === 'undefined') {
   getMIDIMessage = function(midiMessage) {
     var arr = midiMessage.data    
     var index = arr[1]
-    // console.log('Midi received on cc#' + index + ' value:' + arr[2])    // uncomment to monitor incoming Midi
+    console.log('Midi received on cc#' + index + ' value:' + arr[2] + 'channel:' + arr[0])    // uncomment to monitor incoming Midi
     var val = (arr[2])/127.0  // normalize CC values to 0.0 - 1.0
     cc[index]=val
   }
